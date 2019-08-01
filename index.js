@@ -226,7 +226,7 @@ function runAministrator(msg) {
 
     function verifyAdminPassword(name) {
         console.clear();
-        prompt.question("Enter your password: ", (pass) => {
+        prompt.question("Enter your password: use 5eret3 as passord...:", (pass) => {
             let foundAdmin = admin.find(ad => ad.name == name);
             if ( foundAdmin && foundAdmin.password == pass) {
                 admin1 = new Administrator(name, pass);
