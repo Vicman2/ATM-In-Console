@@ -106,13 +106,13 @@ var admin1;
 function runCustomer(){
     header("Verify that you are the owner of this card", "")
     function VerifyName(){
-        prompt.question("Please input your name : ", (userName) =>{
+        prompt.question("Please input your name(Vicman) : ", (userName) =>{
             verifyUserPassword(userName);
         })
     }
-
+    // go to customers.js to take any account you would want to use to test
     function verifyUserPassword(username){
-        prompt.question("Enter password : ", (pass) =>{
+        prompt.question("Enter password(ubuntu23) : ", (pass) =>{
             let foundUser = customers.find(userMe => userMe.name == username);
             if(foundUser && foundUser.password == pass){
                 user1 = new User(username, foundUser.amount, foundUser.password, foundUser.accountNo);
@@ -189,7 +189,7 @@ function legalUserOperation(user, msg){
         }
 
 
-        // The che
+        // The check balance function 
         function checkBalance(user11){
             header("Dear " + user11.name + " This is your account details", "Have fun dear")
             console.log(" Name : ", user11.name.toUpperCase())
@@ -205,6 +205,10 @@ function legalUserOperation(user, msg){
             console.log("Thank you for banking with us.");
 
             toHome("")
+        }
+
+        function transfer(user11){
+            toHome(user11.name + ", Sorry, you cannot make transfers with this ATM because of network issues");
         }
     })
 
@@ -293,6 +297,8 @@ function doAdminJob(admin1) {
         atm1.disable();
         toHome(atm1.name + " have been disabled");
     }
+
+
     function checkATM_Balance(){
         console.log("============================");
         console.log("ATM ENQUIRY");
@@ -302,6 +308,7 @@ function doAdminJob(admin1) {
         console.log();
         toHome("");
     }
+
 
     prompt.question('Enter an option: ', (option) => {
         if (option == 1) {
