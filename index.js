@@ -210,6 +210,10 @@ function legalUserOperation(user, msg){
         function transfer(user11){
             toHome(user11.name + ", Sorry, you cannot make transfers with this ATM because of network issues");
         }
+
+        function recharge(user11){
+            toHome(user11.name + ", Sorry, you cannot make recharge because of network issues")
+        }
     })
 
 }
